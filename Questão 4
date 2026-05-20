@@ -1,0 +1,40 @@
+4º 
+import java.util.HashMap;
+
+public class CadastroAlunos {
+    public static void main(String[] args) {
+
+        HashMap<Integer, String> alunos = new HashMap<>();
+
+        // Cadastrando alunos
+        alunos.put(101, "Gustavo");
+        alunos.put(102, "Maria");
+        alunos.put(103, "João");
+        alunos.put(104, "Ana");
+
+        // Buscar aluno pela matrícula
+        int matriculaBusca = 102;
+
+        if (alunos.containsKey(matriculaBusca)) {
+            System.out.println("Aluno encontrado: " + alunos.get(matriculaBusca));
+        } else {
+            System.out.println("Matrícula não encontrada.");
+        }
+
+        // Remover aluno pela matrícula
+        int matriculaRemover = 103;
+        alunos.remove(matriculaRemover);
+
+        System.out.println("\nAluno com matrícula " + matriculaRemover + " removido.");
+
+        // Mostrar todos os alunos cadastrados
+        System.out.println("\nLista de alunos cadastrados:");
+
+        for (Integer matricula : alunos.keySet()) {
+            System.out.println(
+                "Matrícula: " + matricula +
+                " | Nome: " + alunos.get(matricula)
+            );
+        }
+    }
+}
